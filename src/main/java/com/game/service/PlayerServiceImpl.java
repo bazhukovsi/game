@@ -60,15 +60,7 @@ public class PlayerServiceImpl implements PlayerService {
                 player.getExperience() > 10_000_000) {
             throw new BadRequestException();
         }
-//        if (player.getBanned() == null) {
-//            player.setBanned(false);
-//        }
-//        if (player.getBanned() == null) {
-//            player.setBanned(false);
-//        }
-//        if (player.getBanned() != null && !player.getBanned()) {
-//           player.setBanned(true);
-//        }
+
         player.setLevel((int) ((Math.sqrt(2500 + 200 * player.getExperience()) - 50) / 100));
         player.setUntilNextLevel(50 * (player.getLevel() + 1) * (player.getLevel() + 2) - player.getExperience());
 
@@ -157,7 +149,7 @@ public class PlayerServiceImpl implements PlayerService {
      * Фильтр
      */
 
-    public List<Player> prepareFilteredShips(final List<Player> filteredPlayers, PlayerOrder order,
+    public List<Player> prepareFilteredPlayers(final List<Player> filteredPlayers, PlayerOrder order,
                                              Integer pageNumber, Integer pageSize) {
         pageNumber = pageNumber == null ? 0 : pageNumber;
         pageSize = pageSize == null ? 3 : pageSize;

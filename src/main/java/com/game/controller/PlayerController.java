@@ -56,7 +56,7 @@ public class PlayerController {
                                        @RequestParam(value = "pageSize", required = false) Integer pageSize) {
         List<Player> filteredPlayers = playerService.getPlayersList(name, title, race, profession, after, before,
                 banned, minExperience, maxExperience, minLevel, maxLevel);
-        return playerService.prepareFilteredShips(filteredPlayers, order, pageNumber, pageSize);
+        return playerService.prepareFilteredPlayers(filteredPlayers, order, pageNumber, pageSize);
     }
 
     /**

@@ -20,7 +20,7 @@ public interface PlayerService {
 
     void deletePlayer(Long id);
 
-    List<Player> prepareFilteredShips(final List<Player> filteredShips, PlayerOrder order,
+    List<Player> prepareFilteredPlayers(final List<Player> filteredShips, PlayerOrder order,
                                       Integer pageNumber, Integer pageSize);
 
     List<Player> getPlayersList(String name, String title, Race race, Profession profession,
